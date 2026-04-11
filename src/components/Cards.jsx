@@ -2,10 +2,10 @@ import React from 'react'
 import { AiFillStar } from 'react-icons/ai'
 import { BsFillBagHeartFill } from 'react-icons/bs'
 
-const Cards = () => {
+const Cards = ({ img, title, star, reviews, newPrice, prevPrice }) => {
     return (
         <section className="card">
-            <img className='card-img' src="https://m.media-amazon.com/images/I/6125yAfsJKL._AC_UX575_.jpg" alt="Shoe" />
+            <img className='card-img' src={img} alt={title} />
 
             <div className="card-details">
                 <h3 className="card-title">Shoe</h3>
