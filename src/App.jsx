@@ -3,7 +3,9 @@ import Navigation from "./Navigation/Nav";
 import Products from "./Products/Products";
 import Recommended from "./Recommended/Recommended";
 import Sidebar from "./Sidebar/Sidebar";
+import "./index.css"
 
+//Database
 import products from './db/data';
 import Card from "./components/Cards";
 
@@ -11,28 +13,23 @@ function App() {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [query, setQuery] = useState("");
 
-    // --------------Input Filter---------------
+    // --------------Input Filter-------------
     const handleInputChange = event => {
         setQuery(event.target.value);
     }
 
-    const filterdItems = products.filter((product) => {
-        product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase() !== -1)
-        console.log(query)
-    }
+    const filteredItems = products.filter((product) =>
+        product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1
     );
-
 
     // --------------Radio Filter---------------
     const handleChange = event => {
         setSelectedCategory(event.target.value);
-        console.log(event.target.value);
     }
 
     // --------------Buttons Filter--------------
     const handleClick = event => {
         setSelectedCategory(event.target.value);
-        console.log(event.target.value);
     }
 
     function filteredData(products, selected, query) {
@@ -40,7 +37,7 @@ function App() {
 
         // Filtering Input Items
         if (query) {
-            filteredProducts = filterdItems
+            filteredProducts = filteredItems
         }
 
         // Selected Filter

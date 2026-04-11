@@ -3,7 +3,7 @@ import "./Price.css";
 import Input from '../../components/Input';
 
 
-const Price = (handleChange) => {
+const Price = ({ handleChange }) => {
     return (
         <div className='ml'>
             <h2 className='sidebar-title price-title'>Price</h2>
